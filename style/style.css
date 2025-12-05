@@ -1,0 +1,1009 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      sans-serif;
+    background: #fdf9f3;
+    color: #111;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* ===== HEADER / HERO ===== */
+  
+  .hero {
+    height: 100vh;                 /* занимаем высоту экрана */
+    max-width: 1200px;             /* ширина блока как на макете */
+    margin: 0 auto;                /* центрируем по горизонтали */
+    padding: 24px 40px 40px;       /* меньше воздуха по краям */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* ===== TOP NAV ===== */
+  
+  .top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #111;
+    padding-bottom: 14px;
+  }
+  
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  /* иконка из квадратиков */
+  .grid-icon {
+    display: grid;
+    grid-template-columns: repeat(2, 10px);
+    grid-template-rows: repeat(2, 10px);
+    gap: 4px;
+  }
+  
+  .grid-icon span {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    border: 1.5px solid #111;
+  }
+  
+  .grid-icon span:nth-child(2),
+  .grid-icon span:nth-child(3) {
+    border-color: #255f9b;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 30px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  /* поиск */
+  .search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 999px;
+    border: 2px solid #e03265;
+    padding: 6px 16px;
+    min-width: 220px;
+    justify-content: space-between;
+    background: #fff;
+  }
+  
+  .search input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    flex: 1;
+  }
+  
+  .search-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #e03265;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+  }
+  
+  .btn-sign {
+    padding: 8px 26px;
+    border-radius: 999px;
+    background: #255f9b;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* ===== MAIN HERO CONTENT ===== */
+  
+  .hero-content {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;           /* поднимаем книги и логотип вверх, ближе к центру */
+    padding-top: 50px;
+    gap: 32px;
+  }
+  
+  .hero-left {
+    flex: 0 0 430px;               /* фиксированная ширина левой части */
+  }
+  
+  /* ===== LOGO BOOKROOM ===== */
+  
+  .logo {
+    display: inline-block;
+    margin-bottom: 36px;
+  }
+  
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-row-gap: 5px;
+    grid-column-gap: 16px;
+    font-size: 70px;               /* крупнее логотип */
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  
+  .logo-grid span {
+    display: inline-block;
+  }
+  
+  .logo-btm {
+    transform: translateX(3px);
+  }
+  
+  /* блок с двумя O */
+  .double-o {
+    position: relative;
+    width: 90px;
+    height: 140px;
+    grid-row: span 2;
+  }
+  
+  .o {
+    position: absolute;
+    top: 0;
+    width: 44px;
+    height: 140px;
+    border-radius: 40px;
+    border: 4px solid;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 44px;
+    font-weight: 700;
+    transform-origin: bottom center;
+  }
+  
+  .o-left {
+    left: 0;
+    border-color: #e03265;
+    color: #e03265;
+    z-index: 2;
+    animation: fallLeft 1.8s ease-in-out 0.5s forwards;
+  }
+  
+  .o-right {
+    right: 0;
+    border-color: #255f9b;
+    color: #255f9b;
+    z-index: 1;
+    animation: fallRight 1.8s ease-in-out 0.5s forwards;
+  }
+  
+  @keyframes fallLeft {
+    0% {
+      transform: rotate(0deg);
+    }
+    40% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(12deg);   /* влево */
+    }
+  }
+  
+  @keyframes fallRight {
+    0% {
+      transform: rotate(0deg);
+    }
+    40% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(10deg);    /* вправо */
+    }
+  }
+  
+  /* ===== ENTER BUTTON ===== */
+  
+  .enter-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  
+  .btn-enter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    border-radius: 50px;
+    border: 2px solid #111;
+    padding: 10px 18px 10px 18px;
+    min-width: 190px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .btn-enter .arrow-circle {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #e03265;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #fff;
+  }
+  
+  .enter-text {
+    font-size: 14px;
+  }
+  
+  /* ===== SUBTITLE TEXT ===== */
+  
+  .subtitle {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  
+  .subtitle a {
+    border-bottom: 2px solid #e03265;
+  }
+  
+  .subtitle-small {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+  
+  /* ===== RIGHT SIDE BOOKS — ближе к макету ===== */
+
+.hero-right {
+    flex: 0 0 520px;          /* побольше, как на скрине */
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: relative;
+  }
+  
+  .books {
+    position: relative;
+    width: 420px;             /* ширина «веера» книг */
+    height: 430px;            /* высота блока с книгами */
+  }
+  
+  /* базовый стиль книги */
+  .book {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    height: 380px;
+    border-radius: 6px;
+    box-shadow: 0 14px 0 rgba(0, 0, 0, 0.18);
+    transform-origin: bottom center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+  }
+  
+  /* текст на корешке */
+  .book-label {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+  }
+  
+  /* стрелка сверху */
+  .book .arrow-top {
+    position: absolute;
+    top: 14px;
+    right: 12px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  /* ===== Позиции почти как на скрине ===== */
+  
+  /* 1 — оранжевая, самая наклонённая и чуть ниже */
+  .book-1 {
+    background: #ff9152;
+    left: -50px;
+    height: 340px;               /* короче остальных */
+    transform: rotate(15deg);
+  }
+  
+  /* 2 — синяя */
+  .book-2 {
+    background: #24456f;
+    left: 115px;
+    transform: rotate(0deg);
+  }
+  
+  /* 3 — зелёная, близко к синей */
+  .book-3 {
+    background: #2b7b3d;
+    left: 210px;
+    transform: rotate(10deg);
+  }
+  
+  /* 4 — розовая, почти ровно */
+  .book-4 {
+    background: #f26c7e;
+    left: 305px;
+    transform: rotate(8deg);
+  }
+  
+  
+  /* немножко адаптива */
+  @media (max-width: 960px) {
+    .hero {
+      padding: 20px 24px 40px;
+    }
+    .hero-content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .hero-right {
+      width: 100%;
+      justify-content: center;
+      margin-top: 40px;
+    }
+  }
+
+
+  /* ===== CATALOG SECTION ===== */
+
+.catalog {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 40px 60px;
+  }
+  
+  .catalog-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 32px;
+    border-top: 2px solid #111;
+    padding-top: 24px;
+  }
+  
+  .catalog h2 {
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  
+  .catalog-subtitle {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .catalog-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .tag {
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1.5px solid #111;
+    background: #fff;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  
+  .tag.active {
+    background: #111;
+    color: #fff;
+  }
+  
+  /* GRID */
+  
+  .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+  }
+  
+  /* CARD */
+  
+  .catalog-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 14px 14px 16px;
+    box-shadow: 0 10px 0 rgba(0, 0, 0, 0.14);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .catalog-cover {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #eee;
+  }
+  
+  .catalog-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .catalog-info h3 {
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+  
+  .catalog-info .author {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 4px;
+  }
+  
+  .catalog-info .meta {
+    font-size: 12px;
+    color: #777;
+  }
+  
+  .card-bottom {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .price {
+    font-weight: 700;
+    font-size: 14px;
+  }
+  
+  .btn-sm {
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1.5px solid #111;
+    background: #fdf9f3;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  /* адаптив */
+  
+  @media (max-width: 1024px) {
+    .catalog-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .catalog {
+      padding: 32px 20px 40px;
+    }
+  
+    .catalog-head {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .catalog-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .catalog-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* ===== MODAL ===== */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.38);
+    display: none;              /* по умолчанию скрыто */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-overlay.show {
+    display: flex;
+  }
+  
+  .modal-window {
+    max-width: 420px;
+    width: 90%;
+    background: #fdf9f3;
+    border-radius: 24px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    padding: 24px 24px 20px;
+    position: relative;
+    border: 2px solid #111;
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1.5px solid #111;
+    background: #fff;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  
+  .modal-title {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+  }
+  
+  .modal-text {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  
+  .modal-text.small {
+    font-size: 13px;
+    color: #555;
+  }
+  
+  .modal-text a {
+    text-decoration: underline;
+  }
+  
+  .btn-modal-ok {
+    margin-top: 10px;
+    padding: 8px 22px;
+    border-radius: 999px;
+    border: 1.5px solid #111;
+    background: #111;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  
+  .section-title {
+    font-size: 26px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    border-top: 2px solid #111;
+    padding-top: 24px;
+  }
+  
+  .section-title.no-border {
+    border-top: none;
+    padding-top: 0;
+  }
+  
+  /* ==== WEEKLY SPOTLIGHT ==== */
+  
+  .weekly-spotlight {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 40px 0;
+  }
+  
+  .spotlight-row {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .spotlight-item {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+  
+  .spotlight-item--reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .spotlight-cover {
+    width: 180px;
+    height: 260px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 0 rgba(0,0,0,0.15);
+    background: #ddd;
+    flex-shrink: 0;
+  }
+  
+  .spotlight-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .spotlight-info h3 {
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+  
+  .spotlight-info .author {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 6px;
+  }
+  
+  .spotlight-info .desc {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 10px;
+  }
+  
+  /* ==== AUDIOBOOKS ==== */
+  
+  .audio-preview {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  
+  .audio-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  
+  .audio-arrow {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid #111;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .audio-row {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+  }
+  
+  .audio-card {
+    width: 160px;
+    padding: 14px;
+    border-radius: 18px;
+    border: 2px solid #111;
+    background: #fff;
+    box-shadow: 0 10px 0 rgba(0,0,0,0.14);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .audio-cover {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 12px;
+    background: #ddd;
+  }
+  
+  .audio-play {
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1.5px solid #111;
+    background: #fdf9f3;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  
+  .audio-title {
+    font-size: 13px;
+  }
+  
+
+  
+  .deals {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  
+  .deals-grid {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .deal {
+    flex: 1;
+    padding: 24px 20px;
+    border-radius: 20px;
+    border: 2px solid #111;
+    background: #fff;
+    box-shadow: 0 10px 0 rgba(0,0,0,0.16);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .deal-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1.5px solid #111;
+    font-size: 12px;
+  }
+  
+
+  
+  .membership {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  
+  .membership-bg {
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+
+    background-image: url("your-background.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+  }
+  
+  .membership-card {
+    max-width: 360px;
+    background: rgba(253, 249, 243, 0.95);
+    border-radius: 20px;
+    border: 2px solid #111;
+    box-shadow: 0 10px 0 rgba(0,0,0,0.18);
+    padding: 20px 24px;
+  }
+  
+  .membership-card p {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  
+  .membership .join {
+    margin-top: 4px;
+    background: #111;
+    color: #fff;
+  }
+  
+
+  
+  .faq {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  
+  .faq-item {
+    border: 2px solid #111;
+    border-radius: 18px;
+    margin-bottom: 12px;
+    padding: 14px;
+  }
+  
+  .faq-item summary {
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+
+  
+  .footer {
+    background: #fff;
+    border-top: 2px solid #111;
+    margin-top: 40px;
+    padding: 40px;
+  }
+  
+  .footer-row {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .footer-col input {
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1.5px solid #111;
+    background: #fdf9f3;
+  }
+  
+  .copy {
+    text-align: center;
+    margin-top: 30px;
+    color: #555;
+  }
+  
+
+  
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.38);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-overlay.show {
+    display: flex;
+  }
+  
+  .modal-window {
+    max-width: 420px;
+    width: 90%;
+    background: #fdf9f3;
+    border-radius: 24px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    padding: 24px 24px 20px;
+    position: relative;
+    border: 2px solid #111;
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1.5px solid #111;
+    background: #fff;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  
+  .modal-title {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+  }
+  
+  .modal-text {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  
+  .modal-text.small {
+    font-size: 13px;
+    color: #555;
+  }
+  
+  .modal-text a {
+    text-decoration: underline;
+  }
+  
+  .btn-modal-ok {
+    margin-top: 10px;
+    padding: 8px 22px;
+    border-radius: 999px;
+    border: 1.5px solid #111;
+    background: #111;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .btn-modal-cancel {
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: 1.5px solid #111;
+    background: #fff;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  
+
+  .club-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  
+  .club-form label {
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .club-form input {
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1.5px solid #111;
+    background: #fff;
+  }
+  
+  .club-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  
+
+  @media (max-width: 900px) {
+    .spotlight-item,
+    .spotlight-item--reverse {
+      flex-direction: column;
+    }
+  
+    .deals-grid,
+    .audio-wrapper {
+      flex-direction: column;
+    }
+  
+    .footer-row {
+      flex-direction: column;
+    }
+  }
+  
