@@ -16,18 +16,17 @@
     color: inherit;
   }
   
-  /* ===== HEADER / HERO ===== */
   
   .hero {
-    height: 100vh;                 /* занимаем высоту экрана */
-    max-width: 1200px;             /* ширина блока как на макете */
-    margin: 0 auto;                /* центрируем по горизонтали */
-    padding: 24px 40px 40px;       /* меньше воздуха по краям */
+    height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 40px 40px;
     display: flex;
     flex-direction: column;
   }
   
-  /* ===== TOP NAV ===== */
+
   
   .top-nav {
     display: flex;
@@ -43,7 +42,7 @@
     gap: 40px;
   }
   
-  /* иконка из квадратиков */
+
   .grid-icon {
     display: grid;
     grid-template-columns: repeat(2, 10px);
@@ -76,7 +75,7 @@
     gap: 20px;
   }
   
-  /* поиск */
+
   .search {
     display: flex;
     align-items: center;
@@ -118,22 +117,21 @@
     cursor: pointer;
   }
   
-  /* ===== MAIN HERO CONTENT ===== */
   
   .hero-content {
     flex: 1;
     display: flex;
     justify-content: space-between;
-    align-items: center;           /* поднимаем книги и логотип вверх, ближе к центру */
+    align-items: center;
     padding-top: 50px;
     gap: 32px;
   }
   
   .hero-left {
-    flex: 0 0 430px;               /* фиксированная ширина левой части */
+    flex: 0 0 430px;
   }
   
-  /* ===== LOGO BOOKROOM ===== */
+
   
   .logo {
     display: inline-block;
@@ -145,7 +143,7 @@
     grid-template-columns: repeat(3, auto);
     grid-row-gap: 5px;
     grid-column-gap: 16px;
-    font-size: 70px;               /* крупнее логотип */
+    font-size: 70px;
     font-weight: 700;
     line-height: 1;
     text-transform: uppercase;
@@ -159,7 +157,7 @@
     transform: translateX(3px);
   }
   
-  /* блок с двумя O */
+
   .double-o {
     position: relative;
     width: 90px;
@@ -207,7 +205,7 @@
       transform: rotate(0deg);
     }
     100% {
-      transform: rotate(12deg);   /* влево */
+      transform: rotate(12deg);
     }
   }
   
@@ -219,11 +217,11 @@
       transform: rotate(0deg);
     }
     100% {
-      transform: rotate(10deg);    /* вправо */
+      transform: rotate(10deg);
     }
   }
   
-  /* ===== ENTER BUTTON ===== */
+
   
   .enter-row {
     display: flex;
@@ -263,8 +261,7 @@
     font-size: 14px;
   }
   
-  /* ===== SUBTITLE TEXT ===== */
-  
+
   .subtitle {
     font-size: 18px;
     font-weight: 600;
@@ -280,10 +277,10 @@
     line-height: 1.4;
   }
   
-  /* ===== RIGHT SIDE BOOKS — ближе к макету ===== */
+
 
 .hero-right {
-    flex: 0 0 520px;          /* побольше, как на скрине */
+    flex: 0 0 520px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -292,11 +289,11 @@
   
   .books {
     position: relative;
-    width: 420px;             /* ширина «веера» книг */
-    height: 430px;            /* высота блока с книгами */
+    width: 420px;
+    height: 430px;
   }
   
-  /* базовый стиль книги */
+
   .book {
     position: absolute;
     bottom: 0;
@@ -311,7 +308,7 @@
     padding-top: 40px;
   }
   
-  /* текст на корешке */
+
   .book-label {
     writing-mode: vertical-rl;
     text-orientation: mixed;
@@ -320,7 +317,7 @@
     color: #fff;
   }
   
-  /* стрелка сверху */
+
   .book .arrow-top {
     position: absolute;
     top: 14px;
@@ -336,31 +333,29 @@
     font-size: 14px;
   }
   
-  /* ===== Позиции почти как на скрине ===== */
-  
-  /* 1 — оранжевая, самая наклонённая и чуть ниже */
+
   .book-1 {
     background: #ff9152;
     left: -50px;
-    height: 340px;               /* короче остальных */
+    height: 340px;
     transform: rotate(15deg);
   }
   
-  /* 2 — синяя */
+
   .book-2 {
     background: #24456f;
     left: 115px;
     transform: rotate(0deg);
   }
   
-  /* 3 — зелёная, близко к синей */
+
   .book-3 {
     background: #2b7b3d;
     left: 210px;
     transform: rotate(10deg);
   }
   
-  /* 4 — розовая, почти ровно */
+
   .book-4 {
     background: #f26c7e;
     left: 305px;
@@ -368,7 +363,7 @@
   }
   
   
-  /* немножко адаптива */
+ 
   @media (max-width: 960px) {
     .hero {
       padding: 20px 24px 40px;
@@ -385,7 +380,7 @@
   }
 
 
-  /* ===== CATALOG SECTION ===== */
+
 
 .catalog {
     max-width: 1200px;
@@ -435,7 +430,7 @@
     color: #fff;
   }
   
-  /* GRID */
+
   
   .catalog-grid {
     display: grid;
@@ -443,7 +438,7 @@
     gap: 24px;
   }
   
-  /* CARD */
+
   
   .catalog-card {
     background: #fff;
@@ -508,7 +503,7 @@
     cursor: pointer;
   }
   
-  /* адаптив */
+
   
   @media (max-width: 1024px) {
     .catalog-grid {
@@ -537,13 +532,13 @@
     }
   }
   
-  /* ===== MODAL ===== */
+
 
 .modal-overlay {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.38);
-    display: none;              /* по умолчанию скрыто */
+    display: none;
     justify-content: center;
     align-items: center;
     z-index: 1000;
@@ -626,7 +621,7 @@
     padding-top: 0;
   }
   
-  /* ==== WEEKLY SPOTLIGHT ==== */
+
   
   .weekly-spotlight {
     max-width: 1200px;
@@ -683,8 +678,7 @@
     margin-bottom: 10px;
   }
   
-  /* ==== AUDIOBOOKS ==== */
-  
+
   .audio-preview {
     max-width: 1200px;
     margin: 0 auto;
@@ -733,7 +727,7 @@
     width: 100%;
     aspect-ratio: 1/1;
     border-radius: 12px;
-    background: #ddd;
+    background-image: url(https://www.apple.com/v/apple-podcasts/e/images/meta/apple-podcasts__b2lbt81axo2u_og.png);
   }
   
   .audio-play {
